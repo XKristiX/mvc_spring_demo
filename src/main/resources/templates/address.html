@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td,
+        th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employees</h1>
+    <!-- <p th:text="${employees}"/></p> -->
+    <!-- loop thru employees -->
+    <table>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Street Address</th>
+            <th>Employee City</th>
+            <th>Employee State</th>
+        </tr>
+        <tr th:each="address: ${address}">
+            <td th:text="${address.id}"/>
+            <td th:text="${address.streetNumberAndName}"/>
+            <td th:text="${address.city}"/>
+            <td th:text="${address.state}"/>
+        </tr>
+    </table>
+</body>
+</html>
